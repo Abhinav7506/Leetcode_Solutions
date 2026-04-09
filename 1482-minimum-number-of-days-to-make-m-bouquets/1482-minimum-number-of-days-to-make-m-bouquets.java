@@ -13,8 +13,12 @@ class Solution {
         else return false ;
     }
     public int minDays(int[] bloomDay, int m, int k) {
-        int low=Arrays.stream(bloomDay).min().getAsInt();
-        int high=Arrays.stream(bloomDay).max().getAsInt();
+        int low=Integer.MAX_VALUE;
+        int high=Integer.MIN_VALUE;
+        for(int i:bloomDay){
+            low = Math.min(low,i);
+            high = Math.max(high,i);
+        }
         int mid,ans=high;
         if(bloomDay.length < (long)m*k) return -1;
         while(low<=high){
