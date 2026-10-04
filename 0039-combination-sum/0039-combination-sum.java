@@ -5,13 +5,12 @@ class Solution {
         return ans;
     }
     void backtrack(int index,int[] candidates,int sum, ArrayList<Integer> lst,int target,List<List<Integer>>ans){
-    
-        if(index==candidates.length){
-            if(sum==target){
-                ans.add(new ArrayList<>(lst));
-            }
+        if(sum==target){
+            ans.add(new ArrayList<>(lst));
             return;
         }
+        
+    
         if (index == candidates.length || sum > target) {
         return;
     }
