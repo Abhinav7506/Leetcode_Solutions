@@ -25,8 +25,6 @@ class Solution {
 
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-
-                // Last node at this level
                 if (i == size - 1) {
                     answer.add(node.val);
                 }
